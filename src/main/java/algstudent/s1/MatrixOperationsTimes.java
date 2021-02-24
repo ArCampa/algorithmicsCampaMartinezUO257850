@@ -8,6 +8,8 @@ import algstudent.s0.MatrixOperations;
 import algstudent.s12.Loop1;
 import algstudent.s12.Loop2;
 import algstudent.s12.Loop3;
+import algstudent.s12.Loop4;
+import algstudent.s12.Loop5;
 import algstudent.s12.Unknown;
 
 public class MatrixOperationsTimes {
@@ -18,15 +20,18 @@ public class MatrixOperationsTimes {
 
     public static void main(String arg[]) throws IOException {
         int limit = 1000;
+        int counter = 0;
+        int i = 1;
 
-        File file = new File("resultsDiag1.csv");
+
+        File file;
+        FileWriter fos;
+        file = new File("resultsDiag1.csv");
         if (file.createNewFile()) {
             System.out.println("file created");
         }
-        FileWriter fos = new FileWriter(file);
+        fos = new FileWriter(file);
 
-        int counter = 0;
-        int i = 1;
         while (true) {
             counter++;
             i++;// linear increase
@@ -166,6 +171,60 @@ public class MatrixOperationsTimes {
 
         fos.close();
 
-        System.out.println("finished");
+        System.out.println("unknown finished");
+
+        file = new File("loop4.csv");
+        if (file.createNewFile()) {
+            System.out.println("file created");
+        }
+        fos = new FileWriter(file);
+
+        counter = 0;
+        i = 1;
+        while (true) {
+            counter++;            
+            //i++;// linear increase
+            i*=2;
+            // i = i^2; cuadratic increase
+            long t1 = System.currentTimeMillis();
+            Loop4.loop4(i);
+            fos.append((System.currentTimeMillis() - t1) + ",\n");
+            fos.flush();            
+            System.out.print(" " + counter);
+            if (i >= 4096) { // if execution time is longer than 10 minutes
+                break;
+            }
+        }
+
+        fos.close();
+
+        System.out.println("loop4 finished");
+
+        file = new File("loop5.csv");
+        if (file.createNewFile()) {
+            System.out.println("file created");
+        }
+        fos = new FileWriter(file);
+
+        counter = 0;
+        i = 1;
+        while (true) {
+            counter++;
+            i *= 2;
+            // i *= 5;
+            // i = i^2; cuadratic increase
+            long t1 = System.currentTimeMillis();
+            Loop5.loop5(i);
+            fos.append((System.currentTimeMillis() - t1) + ",\n");
+            fos.flush();
+            System.out.print(" " + counter);
+            if (i >= 4096) { // if execution time is longer than 10 minutes
+                break;
+            }
+        }
+
+        fos.close();
+
+        System.out.println(" finished");
     }
 }
