@@ -1,12 +1,6 @@
 package algstudent.s2;
 
-import labs.en._20.lab2sorting.Bubble;
-import labs.en._20.lab2sorting.Insertion;
-import labs.en._20.lab2sorting.QuicksortCentralElement;
-import labs.en._20.lab2sorting.QuicksortFateful;
-import labs.en._20.lab2sorting.QuicksortMedianOfThree;
-import labs.en._20.lab2sorting.Selection;
-import labs.en._20.lab2sorting.Vector;
+import algstudent.s2.*;
 
 public class SortingTests {
 
