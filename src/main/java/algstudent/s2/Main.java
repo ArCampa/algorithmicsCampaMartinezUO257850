@@ -7,25 +7,27 @@ import java.io.IOException;
 public class Main {
     public static void main(String arg[]) throws IOException {
         int i = 10000;
+        int limit = 1280000;
         File file;
         FileWriter fos;
         file = new File("resultsBubbleDirect.csv");
         if (file.createNewFile()) {
-            System.out.println("file created");
+        System.out.println("file created");
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
-            i *= 2;
-            Vector vector = new Bubble(i);
-            vector.directlySorted();
+        while (i < limit) {
+        i *= 2;
+        System.out.println("i= " + i);
+        Vector vector = new Bubble(i);
+        vector.directlySorted();
 
-            long t1 = System.currentTimeMillis();
+        long t1 = System.currentTimeMillis();
 
-            vector.sort();
+        vector.sort();
 
-            fos.append((System.currentTimeMillis() - t1) + ",\n");
-            fos.flush();
+        fos.append((System.currentTimeMillis() - t1) + ",\n");
+        fos.flush();
         }
 
         System.out.println("Bubble Direct finished");
@@ -35,21 +37,22 @@ public class Main {
 
         file = new File("resultsBubbleInverse.csv");
         if (file.createNewFile()) {
-            System.out.println("file created");
+        System.out.println("file created");
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
-            i *= 2;
-            Vector vector = new Bubble(i);
-            vector.inverselySorted();
+        while (i < limit) {
+        i *= 2;
+        System.out.println("i= " + i);
+        Vector vector = new Bubble(i);
+        vector.inverselySorted();
 
-            long t1 = System.currentTimeMillis();
+        long t1 = System.currentTimeMillis();
 
-            vector.sort();
+        vector.sort();
 
-            fos.append((System.currentTimeMillis() - t1) + ",\n");
-            fos.flush();
+        fos.append((System.currentTimeMillis() - t1) + ",\n");
+        fos.flush();
         }
 
         System.out.println("Bubble Inverse finished");
@@ -58,21 +61,22 @@ public class Main {
         i = 10000;
         file = new File("resultsBubbleRandom.csv");
         if (file.createNewFile()) {
-            System.out.println("file created");
+        System.out.println("file created");
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
-            i *= 2;
-            Vector vector = new Bubble(i);
-            vector.randomlySorted();
+        while (i < limit) {
+        i *= 2;
+        System.out.println("i= " + i);
+        Vector vector = new Bubble(i);
+        vector.randomlySorted();
 
-            long t1 = System.currentTimeMillis();
+        long t1 = System.currentTimeMillis();
 
-            vector.sort();
+        vector.sort();
 
-            fos.append((System.currentTimeMillis() - t1) + ",\n");
-            fos.flush();
+        fos.append((System.currentTimeMillis() - t1) + ",\n");
+        fos.flush();
         }
 
         System.out.println("Bubble Random finished");
@@ -87,8 +91,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new Selection(i);
             vector.directlySorted();
 
@@ -110,8 +115,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new Selection(i);
             vector.inverselySorted();
 
@@ -133,8 +139,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new Selection(i);
             vector.randomlySorted();
 
@@ -158,8 +165,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new Insertion(i);
             vector.directlySorted();
 
@@ -181,8 +189,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new Insertion(i);
             vector.inverselySorted();
 
@@ -204,8 +213,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new Insertion(i);
             vector.randomlySorted();
 
@@ -220,8 +230,7 @@ public class Main {
         System.out.println("Insertion Random finished");
         fos.close();
 
-
-        //---------------------------------------------------
+        // ---------------------------------------------------
 
         i = 10000;
         file = new File("resultsQuicksortDirect.csv");
@@ -230,8 +239,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new QuicksortCentralElement(i);
             vector.directlySorted();
 
@@ -253,8 +263,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new QuicksortCentralElement(i);
             vector.inverselySorted();
 
@@ -276,8 +287,9 @@ public class Main {
         }
         fos = new FileWriter(file);
 
-        while (i < 2560000) {
+        while (i < limit) {
             i *= 2;
+            System.out.println("i= " + i);
             Vector vector = new QuicksortCentralElement(i);
             vector.randomlySorted();
 
