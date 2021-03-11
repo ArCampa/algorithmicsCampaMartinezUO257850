@@ -4,12 +4,13 @@ import java.util.List;
 
 public class Inversions {
 
+	List<Integer> list;
+
 	public Inversions(List<Integer> ranking) {
-		// TODO Auto-generated constructor stub
+		list = ranking;
 	}
 
 	public String start() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

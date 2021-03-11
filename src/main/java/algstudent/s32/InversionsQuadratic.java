@@ -3,14 +3,21 @@ package algstudent.s32;
 import java.util.List;
 
 public class InversionsQuadratic {
-
+	List<Integer> list;
 	public InversionsQuadratic(List<Integer> ranking) {
-		// TODO Auto-generated constructor stub
+		list = ranking;
 	}
 
 	public String start() {
-		// TODO Auto-generated method stub
-		return null;
+		int counter = 0;
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = 0; j < i; j++) {
+				if (list.get(i) > list.get(j) && i < j) {
+					counter++;
+				}
+			}
+		}
+		return "" + counter;
 	}
 
 }
