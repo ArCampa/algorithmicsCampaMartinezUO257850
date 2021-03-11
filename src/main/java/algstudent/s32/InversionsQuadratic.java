@@ -4,6 +4,7 @@ import java.util.List;
 
 public class InversionsQuadratic {
 	List<Integer> list;
+
 	public InversionsQuadratic(List<Integer> ranking) {
 		list = ranking;
 	}
@@ -11,10 +12,11 @@ public class InversionsQuadratic {
 	public String start() {
 		int counter = 0;
 		for (int i = 0; i < list.size(); i++) {
-			for (int j = 0; j < i; j++) {
-				if (list.get(i) > list.get(j) && i < j) {
-					counter++;
-				}
+			for (int j = 0; j < list.size(); j++) {
+				if (list.get(i) > list.get(j))
+					if (i < j) {
+						counter++;
+					}
 			}
 		}
 		return "" + counter;
