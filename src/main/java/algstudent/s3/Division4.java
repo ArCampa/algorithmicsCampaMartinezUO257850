@@ -14,10 +14,13 @@ public class Division4 {
             for (int i = 0; i < n; i++) {
                 for (int j = i; j < n; j++) {
                     cont++; // O(1)
-                    rec4(n / 2);
-                    rec4(n / 2);
+
                 }
             }
+            rec4(n / 3);
+            rec4(n / 3);
+            rec4(n / 3);
+            rec4(n / 3);
         }
         return cont;
     }
