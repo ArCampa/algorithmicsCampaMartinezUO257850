@@ -9,10 +9,36 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class SegmentsPlacement {
+    List<Integer> elements;
+
+    public void main(String file) {
+        loadFile(file);
+
+        ostrichGreedy();
+        greedyLongShort();
+        greedyShortLong();
+    }
+
+    public void mainFromList(List<Integer> list) {
+        elements = list;
+
+        ostrichGreedy();
+        greedyLongShort();
+        greedyShortLong();
+    }
+
     public SegmentsPlacement(String file) {
+        main(file);
+    }
+
+    public SegmentsPlacement(List<Integer> list) {
+        mainFromList(list);
+    }
+
+    private void loadFile(String file) {
         BufferedReader fich = null;
         String line;
-        List<Integer> elements = new ArrayList<Integer>();
+        elements = new ArrayList<Integer>();
 
         try {
             fich = new BufferedReader(new FileReader(file));
@@ -35,12 +61,9 @@ public class SegmentsPlacement {
                 }
         }
 
-        ostrichGreedy(elements);
-        greedyLongShort(elements);
-        greedyShortLong(elements);
     }
 
-    private void ostrichGreedy(List<Integer> elements) {
+    private void ostrichGreedy() {
         int size = elements.get(0);
         int pufosos = 0;
         int line = 0;
@@ -61,7 +84,7 @@ public class SegmentsPlacement {
         System.out.println("Cost of greedy 1 = " + pufosos);
     }
 
-    private void greedyLongShort(List<Integer> elements) {
+    private void greedyLongShort() {
         int size = elements.get(0);
         int pufosos = 0;
         int line = 0;
@@ -88,7 +111,7 @@ public class SegmentsPlacement {
         System.out.println("Cost of greedy 2 = " + pufosos);
     }
 
-    private void greedyShortLong(List<Integer> elements) {
+    private void greedyShortLong() {
         int size = elements.get(0);
         int pufosos = 0;
         int line = 0;
