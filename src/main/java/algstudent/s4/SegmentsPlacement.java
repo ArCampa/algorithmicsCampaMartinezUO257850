@@ -19,12 +19,8 @@ public class SegmentsPlacement {
         greedyShortLong();
     }
 
-    public void mainFromList(List<Integer> list) {
+    public void setList(List<Integer> list) {
         elements = list;
-
-        ostrichGreedy();
-        greedyLongShort();
-        greedyShortLong();
     }
 
     public SegmentsPlacement(String file) {
@@ -32,7 +28,7 @@ public class SegmentsPlacement {
     }
 
     public SegmentsPlacement(List<Integer> list) {
-        mainFromList(list);
+        setList(list);
     }
 
     private void loadFile(String file) {
@@ -63,7 +59,7 @@ public class SegmentsPlacement {
 
     }
 
-    private void ostrichGreedy() {
+    void ostrichGreedy() {
         int size = elements.get(0);
         int pufosos = 0;
         int line = 0;
@@ -84,7 +80,7 @@ public class SegmentsPlacement {
         System.out.println("Cost of greedy 1 = " + pufosos);
     }
 
-    private void greedyLongShort() {
+    void greedyLongShort() {
         int size = elements.get(0);
         int pufosos = 0;
         int line = 0;
@@ -111,7 +107,7 @@ public class SegmentsPlacement {
         System.out.println("Cost of greedy 2 = " + pufosos);
     }
 
-    private void greedyShortLong() {
+    void greedyShortLong() {
         int size = elements.get(0);
         int pufosos = 0;
         int line = 0;
