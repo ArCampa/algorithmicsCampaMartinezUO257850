@@ -34,7 +34,7 @@ public class SegmentsPlacementTimes {
         }
         greedy3 = new FileWriter(file3);
 
-        for (int i = 100; i <= 12800; i*=2) {
+        for (int i = 100; i <= 12800; i *= 2) {
             List<Integer> list = generateList(i);
             System.out.println("---------------" + i + "--------------");
             SegmentsPlacement segments = new SegmentsPlacement(list);
@@ -55,10 +55,11 @@ public class SegmentsPlacementTimes {
             greedy3.flush();
 
             System.out.println(i + " finished");
-            greedy1.close();
-            greedy2.close();
-            greedy3.close();
+
         }
+        greedy1.close();
+        greedy2.close();
+        greedy3.close();
     }
 
     private List<Integer> generateList(int size) {
