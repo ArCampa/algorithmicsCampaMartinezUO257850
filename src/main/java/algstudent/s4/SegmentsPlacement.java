@@ -78,6 +78,7 @@ public class SegmentsPlacement {
             System.out.println("S" + i + ": (" + prevLine + " to " + line + "), midpoint =" + calculoPuf);
         }
         System.out.println("Cost of greedy 1 = " + pufosos);
+        System.out.println();
     }
 
     void greedyLongShort() {
@@ -105,6 +106,7 @@ public class SegmentsPlacement {
             System.out.println("S" + i + ": (" + prevLine + " to " + line + "), midpoint =" + calculoPuf);
         }
         System.out.println("Cost of greedy 2 = " + pufosos);
+        System.out.println();
     }
 
     void greedyShortLong() {
@@ -132,6 +134,7 @@ public class SegmentsPlacement {
             System.out.println("S" + i + ": (" + prevLine + " to " + line + "), midpoint =" + calculoPuf);
         }
         System.out.println("Cost of greedy 3 = " + pufosos);
+        System.out.println();
     }
 
 }
