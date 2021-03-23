@@ -34,7 +34,8 @@ public class SegmentsPlacementTimes {
         }
         greedy3 = new FileWriter(file3);
 
-        for (int i = 100; i <= 12800; i *= 2) {
+       // for (int i = 100; i <= 12800; i *= 2) {
+        for (int i = 100; i <= 128000000; i *= 2) {
             List<Integer> list = generateList(i);
             System.out.println("---------------" + i + "--------------");
             SegmentsPlacement segments = new SegmentsPlacement(list);
